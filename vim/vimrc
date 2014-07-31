@@ -1,0 +1,92 @@
+" Vundle settings
+
+set nocompatible               " be iMproved
+filetype off                   " required!
+set rtp+=~/.dotfiles/vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'scrooloose/nerdtree'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'sickill/vim-monokai'
+Bundle 'spf13/vim-autoclose'
+Bundle 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+
+" Github repos of the user 'vim-scripts'
+" => can omit the username part
+
+" non github repos
+
+" ...
+
+"" General Settings
+
+syntax enable
+colorscheme monokai
+
+" Line endings should be Unix-style unless the file is from someone else.
+set fileformat=unix
+au BufNewFile * set fileformat=unix
+
+" Automatically indent when adding a curly bracket, etc.
+" required! by vundle
+filetype plugin indent on
+
+" Tabs converted to 4 spaces
+set shiftwidth=2
+set tabstop=2
+set expandtab
+set smarttab
+set backspace=indent,eol,start
+
+set autoindent
+set smartindent
+set autoread " reload files when changed on disk, i.e. via `git checkout`
+set backupcopy=yes " see :help crontab
+set clipboard=unnamed " yank and paste with the system clipboard
+set directory-=. " don't store swapfiles in the current directory
+set encoding=utf-8
+set expandtab " expand tabs to spaces
+set ignorecase " case-insensitive search
+set incsearch " search as you type
+set laststatus=2 " always show statusline
+set list " show trailing whitespace
+set listchars=tab:▸\ ,trail:▫
+set number " show line numbers
+
+"Airline take off
+let g:airline#extentions#tabline#enabled = 1
+set laststatus=2
+let g:airline_powerline_fonts = 0
+let g:airline#themes#monokai#palette = 1 
+
+"keyboard shortcuts
+let mapleader = ','
+nnoremap <leader>d :NERDTreeToggle<CR>
+
+
+
+set rtp+=/usr/local/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+
+" These lines setup the environment to show graphics and colors correctly.
+set t_Co=256
+
+
+
+let g:minBufExplForceSyntaxEnable = 1
+
+if ! has('gui_running')
+  set ttimeoutlen=10
+         augroup FastEscape
+            autocmd!
+            au InsertEnter * set timeoutlen=0
+            au InsertLeave * set timeoutlen=1000
+         augroup END
+endif
