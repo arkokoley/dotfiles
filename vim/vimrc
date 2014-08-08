@@ -1,7 +1,4 @@
-" Vundle settings
-
-set nocompatible               " be iMproved
-filetype off                   " required!
+" Vundle settings set nocompatible               " be iMproved filetype off                   " required!
 set rtp+=~/.dotfiles/vim/bundle/vundle/
 call vundle#rc()
 
@@ -17,7 +14,8 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'sickill/vim-monokai'
 Bundle 'spf13/vim-autoclose'
 Bundle 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
+Bundle 'bling/vim-airline'
+Bundle 'kien/ctrlp.vim'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
@@ -28,8 +26,8 @@ Plugin 'bling/vim-airline'
 
 "" General Settings
 
-syntax enable
-colorscheme monokai
+syntax on
+color monokai
 
 " Line endings should be Unix-style unless the file is from someone else.
 set fileformat=unix
