@@ -1,5 +1,6 @@
-" Vundle settings set nocompatible               " be iMproved filetype off                   " required!
-set rtp+=~/.dotfiles/vim/bundle/vundle/
+" Vundle settings 
+set nocompatible               " be iMproved filetype off                   " required!
+set rtp+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -9,13 +10,16 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-Bundle 'scrooloose/nerdtree'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'sickill/vim-monokai'
-Bundle 'spf13/vim-autoclose'
-Bundle 'scrooloose/syntastic'
-Bundle 'bling/vim-airline'
-Bundle 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'sickill/vim-monokai'
+Plugin 'spf13/vim-autoclose'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'edsono/vim-matchit'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
@@ -26,7 +30,7 @@ Bundle 'kien/ctrlp.vim'
 
 "" General Settings
 
-syntax on
+syntax enable
 color monokai
 
 " Line endings should be Unix-style unless the file is from someone else.
@@ -64,6 +68,8 @@ let g:airline#extentions#tabline#enabled = 1
 set laststatus=2
 let g:airline_powerline_fonts = 0
 let g:airline#themes#monokai#palette = 1 
+"C compiler
+let g:syntastic_c_check_header = 1
 
 "keyboard shortcuts
 let mapleader = ','
