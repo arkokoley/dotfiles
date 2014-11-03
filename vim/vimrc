@@ -101,6 +101,7 @@ let g:multi_cursor_start_key='<F6>'
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-t> :tabnew<CR>
+map  <C-w> :close<CR>
 " Disables Arrow Keys in Normal Mode
 nnoremap <up> <nop>
 nnoremap <down> <nop>
