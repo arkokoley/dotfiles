@@ -101,17 +101,18 @@ let g:multi_cursor_start_key='<F6>'
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-t> :tabnew<CR>
+map  <C-w> :close<CR>
 " Disables Arrow Keys in Normal Mode
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
+"nnoremap j gj
+"nnoremap k gk
 nnoremap ; :
 
 "set rtp+=/usr/local/Python/2.7/lib/python/site-packages/powerline/bindings/vim
