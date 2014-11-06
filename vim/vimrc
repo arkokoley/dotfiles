@@ -1,5 +1,3 @@
-" Vundle settings 
-set nocompatible               " be iMproved filetype off                   " required!
 set rtp+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#rc()
 
@@ -20,11 +18,12 @@ Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'edsono/vim-matchit'
+Plugin 'szw/Vim-CtrlSpace'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'benmills/vimux'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'zenorocha/dracula-theme',{'rtp': 'vim/'}
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'rstacruz/sparkup'
+Plugin 'tpope/vim-surround'
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
 
@@ -37,7 +36,6 @@ Plugin 'zenorocha/dracula-theme',{'rtp': 'vim/'}
 syntax on
 ""set background=dark
 color molokai
-
 " Line endings should be Unix-style unless the file is from someone else.
 set fileformat=unix
 au BufNewFile * set fileformat=unix
@@ -83,20 +81,49 @@ vnoremap <tab> %
 "Airline take off
 let g:airline#extentions#tabline#enabled = 1
 set laststatus=2
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline#themes#monokai#palette = 1 
 "C compiler
 let g:syntastic_c_check_header = 1
 
+"Hidden Required for Vim-CtrlSpace
+set hidden
+let g:airline_exclude_preview = 1
+
+" Rainbow Parenthesis colors
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+let g:rbpt_max = 16
+
+let g:rbpt_loadcmd_toggle = 0
+
 "keyboard shortcuts
 let mapleader = ','
 nnoremap <leader>d :NERDTreeToggle<CR>
-" Default mapping
+nnoremap <leader>r :RainbowParenthesesToggle<CR>
+" MultiCursor key mapping
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
-let g:multi_cursor_start_key='<F6>'
+let g:multi_cursor_start_key='<F3>'
 "tab keys
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
@@ -115,12 +142,8 @@ map  <C-w> :close<CR>
 "nnoremap k gk
 nnoremap ; :
 
-"set rtp+=/usr/local/Python/2.7/lib/python/site-packages/powerline/bindings/vim
-
 " These lines setup the environment to show graphics and colors correctly.
 set t_Co=256
-
-
 
 let g:minBufExplForceSyntaxEnable = 1
 
