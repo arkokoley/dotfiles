@@ -24,11 +24,13 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'rstacruz/sparkup'
 Plugin 'tpope/vim-surround'
+Bundle 'zenorocha/dracula-theme'
+Plugin 'whatyouhide/vim-gotham'
+Plugin 'ryanss/vim-hackernews'
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
 
 " non github repos
-
 " ...
 
 "" General Settings
@@ -44,7 +46,7 @@ au BufNewFile * set fileformat=unix
 " required! by vundle
 filetype plugin indent on
 
-" Tabs converted to 4 spaces
+" Tabs converted to 2 spaces
 set shiftwidth=2
 set tabstop=2
 set expandtab
@@ -58,7 +60,6 @@ set backupcopy=yes " see :help crontab
 set clipboard=unnamed " yank and paste with the system clipboard
 set directory-=. " don't store swapfiles in the current directory
 set encoding=utf-8
-set expandtab " expand tabs to spaces
 set ignorecase " case-insensitive search
 set incsearch " search as you type
 set laststatus=2 " always show statusline
@@ -141,12 +142,29 @@ map  <C-w> :close<CR>
 "nnoremap j gj
 "nnoremap k gk
 nnoremap ; :
+inoremap jk <Esc>
+nnoremap ! :!
 
+"Wordprocessing capabilities
+func! WordProcessorMode()
+  setlocal formatoptions=t1
+  setlocal textwidth=80
+  map j gj
+  map k gk
+  setlocal smartindent
+  setlocal spell spelllang=en_us
+  setlocal noexpandtab
+endfu
+com! WP call WordProcessorMode()
+
+"Auto Save file on leaving insert mode.
+autocmd InsertLeave * if expand('%') != '' | update | endif
 " These lines setup the environment to show graphics and colors correctly.
 set t_Co=256
 
 let g:minBufExplForceSyntaxEnable = 1
 
+set guifont=Inconsolata\ for\ Powerline\ 12
 if ! has('gui_running')
   set ttimeoutlen=10
          augroup FastEscape

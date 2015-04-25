@@ -11,3 +11,4 @@ ln -s vim/vimrc $HOME/.vimrc
 ln -s zsh/zshrc $HOME/.zshrc
 
 chsh -s zsh
+vim +PluginInstall

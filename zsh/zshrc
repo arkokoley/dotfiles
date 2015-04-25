@@ -55,7 +55,8 @@ source $ZSH/oh-my-zsh.sh
 
 # export PROMPT="%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%}"
 
-export PATH="/home/arkokoley/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/arkokoley/.rvm/bin:/home/arkokoley/.rvm/bin:/home/arkokoley/go/bin:/home/arkokoley/.rvm/bin"
+export PATH="/home/arkokoley/bin:/home/arkokoley/.composer/vendor/bin:/home/arkokoley/mongodb/mongodb-linux-x86_64-2.6.3/bin:/home/arkokoley/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/arkokoley/.rvm/bin:/home/arkokoley/.rvm/bin:/home/arkokoley/go/bin:/home/arkokoley/.rvm/bin"
+PATH=$HOME/code/subuser/logic:$HOME/.subuser/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -73,5 +74,7 @@ export PATH="/home/arkokoley/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+source ~/.bin/tmuxinator.zsh
 
-export PATH=/home/arkokoley/mongodb/mongodb-linux-x86_64-2.6.3/bin:$PATH
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
