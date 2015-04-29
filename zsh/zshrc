@@ -74,7 +74,6 @@ PATH=$HOME/code/subuser/logic:$HOME/.subuser/bin:$PATH
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-source ~/.bin/tmuxinator.zsh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
