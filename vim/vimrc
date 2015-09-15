@@ -1,5 +1,6 @@
 set rtp+=~/dotfiles/vim/bundle/Vundle.vim
 call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
@@ -10,9 +11,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'sickill/vim-monokai'
 Plugin 'spf13/vim-autoclose'
-Plugin 'tomasr/molokai'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
@@ -27,16 +26,20 @@ Plugin 'tpope/vim-surround'
 Bundle 'zenorocha/dracula-theme'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'ryanss/vim-hackernews'
+Bundle 'mrtazz/simplenote.vim'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'sickill/vim-monokai'
+Plugin 'tomasr/molokai'
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
 
 " non github repos
 " ...
-
+call vundle#end()
 "" General Settings
 
 syntax on
-""set background=dark
+set background=dark
 color molokai
 " Line endings should be Unix-style unless the file is from someone else.
 set fileformat=unix
@@ -130,6 +133,9 @@ map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-t> :tabnew<CR>
 map  <C-w> :close<CR>
+map  <C-s> :vsp<CR>
+nnoremap  <leader>l :wincmd l<CR>
+nnoremap  <leader>h :wincmd h<CR>
 " Disables Arrow Keys in Normal Mode
 "nnoremap <up> <nop>
 "nnoremap <down> <nop>
@@ -158,7 +164,7 @@ endfu
 com! WP call WordProcessorMode()
 
 "Auto Save file on leaving insert mode.
-autocmd InsertLeave * if expand('%') != '' | update | endif
+"autocmd InsertLeave * if expand('%') != '' | update | endif
 " These lines setup the environment to show graphics and colors correctly.
 set t_Co=256
 
@@ -173,3 +179,6 @@ if ! has('gui_running')
             au InsertLeave * set timeoutlen=1000
          augroup END
 endif
+
+let g:SimplenoteUsername = "arkokoley@live.in"
+let g:SimplenotePassword = "Blogging123"
