@@ -11,13 +11,15 @@ cd vim/bundle/
 rm Vundle.vim -r
 git clone https://github.com/gmarik/Vundle.vim
 
-rm $HOME/.vimrc
-rm $HOME/.zshrc
+[[ -f $HOME/.vimrc ]] && mv $HOME/.vimrc $HOME/.vimrc-old
+[[ -f $HOME/.zshrc ]] && mv $HOME/.zshrc $HOME/.zshrc-old
+
+cd ../..
 ln -s $PWD/vim/vimrc $HOME/.vimrc
 ln -s $PWD/zsh/zshrc $HOME/.zshrc
 chsh -s /bin/zsh
-nohup vim +PluginInstall &
-cd vim/bundle/YouCompleteMe
+vim +PluginInstall
+cd $HOME/.vim/bundle/YouCompleteMe
 git submodule update --init --recursive
-./install.sh
+./install.py
 cd ../../..
