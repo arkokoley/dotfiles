@@ -11,7 +11,7 @@ dotfiles
 4. Set your terminal font to `Inconsolata for Powerline`
 5. Profit!
 
-## Shortcuts
+## Vim Shortcuts
 
   * Toggle directory view: `,d`
   * Get rainbow parenthesis: `,r`
