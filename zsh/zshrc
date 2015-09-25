@@ -17,11 +17,6 @@ antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme dracula
+antigen theme agnoster
 
 antigen apply
-
-export PATH="/home/arkokoley/bin:/home/arkokoley/.composer/vendor/bin:/home/arkokoley/mongodb/mongodb-linux-x86_64-2.6.3/bin:/home/arkokoley/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/arkokoley/.rvm/bin:/home/arkokoley/.rvm/bin:/home/arkokoley/go/bin:/home/arkokoley/.rvm/bin"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"

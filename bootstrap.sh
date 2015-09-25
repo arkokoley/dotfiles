@@ -1,4 +1,4 @@
-sudo apt-get install python-pip git zsh vim vim-gnome cmake python-dev python3-dev
+sudo apt-get install python-pip git zsh vim vim-gnome cmake python-dev python3-dev exeburant-ctags
 
 #git clone https://github.com/Lokaltog/powerline-fonts --depth=1
 #cd powerline-fonts
