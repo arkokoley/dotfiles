@@ -46,13 +46,25 @@ dotfiles
     * To go back: `u`
     * To close: `:bd`
 
-  * Show/hide class outline viewer, similar to ones in IDEs     like Eclips, JetBrains: `,t`
+  * Show/hide class outline viewer, similar to ones in IDEs like Eclips, JetBrains: `,t`
 
   * Run shell/terminal commands in vim: `! <command>`
     Eg, compiling `x.c` file to n: `! gcc x.c -o n`
 
+    If that is too limiting for you, run a entire terminal within vim
+    `,m`: a terminal window pops up. Use `,m` to close the window.
+
+  * Spell Check:
+    * `,s` to toggle spell check.
+      Incorrect words apprear in red, grammer errors in blue.
+    * `,f` to correct words.
+
   * Specially mapped keys:
     * `;` mapped to `:`, removing the necessity of using shift and `;` key for Normal commands starting with `:`.
-    * `w` mapped to `:w`: saves the file with just `w`.
+    * `w` mapped to `:w`: saves the file.
+    * `zz` mapped to `:wq`: saves the file and quits.
+    * `o <filename>` mapped to `:e <filename>`: Opens <filename> for editing.
+    * `jk` in insert mode, mapped to `<ESC>`: For quickly changing modes without moving to the esc position.
 
+  * Remove old plugins: ',clean'
   * Update plugins installed: `,update`

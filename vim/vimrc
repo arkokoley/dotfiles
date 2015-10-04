@@ -130,13 +130,14 @@ let mapleader = ','
 nnoremap <leader><space> :noh<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>r :RainbowParenthesesToggle<CR>
+nnoremap <leader>m :VimShellPop<CR>
 nnoremap <leader>t :TagbarToggle<CR>
 nnoremap <leader>hn :HackerNews<CR>
 nnoremap <leader>clean :PluginClean<CR>
 nnoremap <leader>update :PluginUpdate<CR>
 
 " Spell Check Functionality
-nnoremap <leader>s :set spell spelllang=en_us! nospell?<CR>
+nnoremap <leader>s :set spell spelllang=en_us ! nospell?<CR>
 nnoremap <leader>f 1z=<CR>
 " MultiCursor key mapping
 let g:multi_cursor_next_key='<C-n>'
@@ -153,6 +154,8 @@ nnoremap ; :
 inoremap jk <Esc>
 nnoremap ! :!
 nnoremap w :w<CR>
+nnoremap zz :wq<CR>
+nnoremap o :e<CR>
 
 nnoremap  <C-s> :vsp<CR>
 nnoremap  <leader>l :wincmd l<CR>
