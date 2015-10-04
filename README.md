@@ -66,5 +66,5 @@ dotfiles
     * `o <filename>` mapped to `:e <filename>`: Opens <filename> for editing.
     * `jk` in insert mode, mapped to `<ESC>`: For quickly changing modes without moving to the esc position.
 
-  * Remove old plugins: ',clean'
+  * Remove old plugins: `,clean`
   * Update plugins installed: `,update`
