@@ -5,22 +5,20 @@ cd powerline-fonts
 sh install.sh
 cd .. && rm powerline-fonts -r
 
-cd vim/bundle/
-rm Vundle.vim -r
-git clone https://github.com/gmarik/Vundle.vim
-cd ../..
-
-[[ -f $HOME/.vimrc ]] && mv $HOME/.vimrc $HOME/.vimrc-old
-ln -s $PWD/vim/vimrc $HOME/.vimrc
-
 [[ -f $HOME/.zshrc ]] && mv $HOME/.zshrc $HOME/.zshrc-old
-ln -s $PWD/zsh/zshrc $HOME/.zshrc
+mkdir $HOME/.files/
+mkdir $HOME/.files/zsh
+cp zsh/* $HOME/.files/zsh/. -r
+ln -s $HOME/.files/zsh/zshrc $HOME/.zshrc
 
 chsh -s /bin/zsh
-vim +PluginInstall
 
-cd $HOME/.vim/bundle/vimproc.vim/
-make
-cd
+read -p "Install Arcana-Vim? [y/n]" answer
+if [ $answer = y ] ; then
+  git clone https://github.com/arkokoley/arcana-vim $HOME/.files/arcana-vim
+  cd $HOME/.files/arcana-vim
+  ./bootstrap.sh
+  rm -f -r $HOME/.files/arcana-vim/
+fi
 
-echo "Done!"
+echo "#### Done! ####"
