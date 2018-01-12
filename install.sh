@@ -1,9 +1,10 @@
-#sudo apt-get install python-pip git zsh vim vim-gnome cmake python-dev python3-dev exuberant-ctags silversearcher-ag
+#!/usr/bin/env sh
+sudo apt-get install python-pip git zsh vim vim-gnome cmake python-dev python3-dev exuberant-ctags silversearcher-ag
 
-#git clone https://github.com/Lokaltog/powerline-fonts --depth=1
-#cd powerline-fonts
-#sh install.sh
-#cd .. && rm powerline-fonts -r
+git clone https://github.com/Lokaltog/powerline-fonts --depth=1
+cd powerline-fonts
+sh install.sh
+cd .. && rm powerline-fonts -r
 
 wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O $HOME/.files/zsh/z
 git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.files/fzf
